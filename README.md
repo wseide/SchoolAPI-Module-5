@@ -1,3 +1,3 @@
-# SchoolAPI-Module-5
+# SchoolAPI-Module-6
 
-## Added NLogger
+## Module 6 of School API
