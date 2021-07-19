@@ -1,3 +1,3 @@
-# SchoolAPI-Module-5
+# SchoolAPI-Module-7
 
-## Added NLogger
+## Added Get Request
