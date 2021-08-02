@@ -1,14 +1,21 @@
 using AutoMapper;
-using Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using NLog;
-using SchoolAPI.Extensions;
 using System.IO;
+using SchoolAPI.Extensions;
+using Contracts;
 
 namespace SchoolAPI
 {
@@ -31,7 +38,11 @@ namespace SchoolAPI
             services.ConfigureSqlContext(Configuration);
             services.ConfigureRepositoryManager();
             services.AddAutoMapper(typeof(Startup));
-
+            services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+            services.ConfigureSwagger();
             services.AddControllers();
         }
 
@@ -46,6 +57,10 @@ namespace SchoolAPI
             {
                 app.UseHsts();
             }
+            app.UseSwagger();
+            app.UseSwaggerUI(s => {
+                s.SwaggerEndpoint("/swagger/v1/swagger.json", "School API v1");
+            });
 
             app.ConfigureExceptionHandler(logger);
             app.UseHttpsRedirection();
@@ -61,7 +76,6 @@ namespace SchoolAPI
             app.UseRouting();
 
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

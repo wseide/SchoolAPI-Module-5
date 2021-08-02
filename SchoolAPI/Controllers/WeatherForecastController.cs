@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Contracts;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Contracts;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace SchoolAPI.Controllers
 {
@@ -18,6 +18,7 @@ namespace SchoolAPI.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+
 
         public WeatherForecastController(ILoggerManager logger)
         {

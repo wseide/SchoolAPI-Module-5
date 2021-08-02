@@ -1,4 +1,7 @@
-﻿namespace Contracts
+﻿using System;
+
+
+namespace Contracts
 {
     public interface IRepositoryManager
     {

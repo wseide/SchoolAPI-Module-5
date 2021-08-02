@@ -1,7 +1,10 @@
-﻿using Entities.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
+
 
 namespace Entities.Configuration
 {
@@ -14,17 +17,16 @@ namespace Entities.Configuration
                 new Organization
                 {
                     Id = new Guid("c9d4c053-49b6-410c-bc78-2d54a9991870"),
-                    OrgName = "xyz org",
+                    OrgName = "njit",
                     Country = "USA",
-                    City = "Bloomfield"
-                    
+                    City = "Newark"
                 },
                 new Organization
                 {
                     Id = new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"),
-                    OrgName = "lmnop org",
-                    Country = "ZM",
-                    City = "Lusaka"
+                    OrgName = "rutgers",
+                    Country = "USA",
+                    City = "Newark"
                 }
             );
         }
