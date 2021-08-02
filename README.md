@@ -17,3 +17,5 @@ Finally, the API can create a mobile application that students and faculty can u
 ![Screenshot2](/erd.jpg)
 
 ## Swagger
+
+![Screenshot3](/swaggerjpg.jpg)
