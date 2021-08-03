@@ -1,4 +1,4 @@
-# SchoolAPI Module 9
+# SchoolAPI Module 10
 ### By Wismy Seide
 
 An API for NJIT would be used to support the university for several reasons.  It can give potential users new reasons to interact with the school.  Also, it can connect on a personal level as it helps users share experiences with others.  An API interface can help developers perform new uses with the data given.  For example, an API that released grades by classes can help determine what departments should be prioritized.  Does one department need more funding to increase student grades, or more grants to focus on student learning can be answered with an API that took that data and made it more presentable.
